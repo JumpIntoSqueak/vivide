@@ -7,12 +7,11 @@
 	"commentStamp" : "",
 	"instvars" : [
 		"objects",
-		"contexts",
 		"groups",
 		"stack",
 		"step",
-		"numProperties",
-		"properties" ],
+		"properties",
+		"modelClass" ],
 	"name" : "ViQueryInterpreter",
 	"pools" : [
 		 ],

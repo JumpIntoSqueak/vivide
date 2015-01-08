@@ -10,5 +10,5 @@
 	"name" : "ViModifiedStepEvent",
 	"pools" : [
 		 ],
-	"super" : "ModifiedEvent",
+	"super" : "ViModifiedPartEvent",
 	"type" : "normal" }

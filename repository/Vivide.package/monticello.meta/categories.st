@@ -20,3 +20,8 @@ SystemOrganization addCategory: #'Vivide-Support-Morphic'!
 SystemOrganization addCategory: #'Vivide-Support-Tests'!
 SystemOrganization addCategory: #'Vivide-Traits'!
 SystemOrganization addCategory: #'Vivide-Visualizations'!
+SystemOrganization addCategory: #'Vivide-Visualizations-OBSOLETE'!
+SystemOrganization addCategory: #'Vivide-Queries-OLD'!
+SystemOrganization addCategory: #'Vivide-Tests'!
+SystemOrganization addCategory: #'Vivide-Exceptions'!
+SystemOrganization addCategory: #'Vivide-Logging'!

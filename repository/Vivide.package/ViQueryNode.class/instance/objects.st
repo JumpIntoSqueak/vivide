@@ -1,4 +1,4 @@
-as yet unclassified
+accessing - convenience
 objects
 
-	^ self childrenAllGroups collect: [:node | node object]
+	^ self nodes collect: [:node | node object]

@@ -1,7 +1,9 @@
-as yet unclassified
+events
 endInteraction
 
+	positionOffset := nil.
+
 	self comeToFront.
-	self bounds: target worldBoundsForHalo.
+	self bounds: self target worldBoundsForHalo.
 	self redrawLater.
 	self addHandles.

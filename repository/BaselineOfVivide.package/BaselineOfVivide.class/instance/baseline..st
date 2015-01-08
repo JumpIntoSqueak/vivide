@@ -107,4 +107,6 @@ baseline: spec
 			group: 'core' with: #('Vivide');
 			group: 'dev' with: #('Fonts' FFI 'Vivide');
 			group: 'coexist' with: #('Vivide' 'VividePolySource');
+			group: 'dynamic' with: #('core' 'VivideDynamicAnalysis');
+			group: 'cop' with: #('core' 'VivideContextS');
 			group: 'TravisCI' with: #('Vivide')].

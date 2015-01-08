@@ -9,12 +9,10 @@
 	"instvars" : [
 		"model",
 		"queries",
-		"listenersForSelections",
-		"listenersForResults",
-		"providersForSelections",
-		"providersForResults",
+		"connections",
 		"recentQueries",
-		"errorBtn" ],
+		"errorBtn",
+		"id" ],
 	"name" : "ViPane",
 	"pools" : [
 		 ],

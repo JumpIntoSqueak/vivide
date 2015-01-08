@@ -1,33 +1,26 @@
-as yet unclassified
+handles
 addFanOutHandles
 
-	| addBtn box buttons |
-	buttons := self listeningPanesForSelections collect: [:p |
-		UiToolButton new
-			color: self fanOutColor;
-			autoRaise: false;
-			buttonStyle: #iconOnly;
-			icon: UiDiagonaIcons icon0331Small asWireframeSunken;
-			layoutInset: 2;
-			balloonText: (p currentQuery
-				ifNil: '(no query)'
-				ifNotNil: [:q | q nextLabel]);
-			setProperty: #paneOut toValue: p;
-			yourself].
-	buttons := buttons, (self listeningPanesForResults collect: [:p |
-		UiToolButton new
-			color: self fanOutColor;
-			autoRaise: false;
-			buttonStyle: #iconOnly;
-			icon: UiDiagonaIcons icon0335Small asWireframeSunken;
-			layoutInset: 2;
-			balloonText: (p currentQuery
-				ifNil: '(no query)'
-				ifNotNil: [:q | q nextLabel]);
-			setProperty: #paneOut toValue: p;
-			yourself]).
-	buttons do: [:btn |
-		self connect: btn signal: #clicked: toSelector: #removeListenerFrom: pattern: #(0)].
+	| addBtn box buttons outBtn |
+	buttons := OrderedCollection new.
+	
+	self target connections
+		select: [:connection | connection isValid and: [connection source == self target]]
+		thenDo: [:connection |
+			buttons add: (UiToolButton new
+				color: self fanOutColor;
+				autoRaise: false;
+				buttonStyle: #iconOnly;
+				icon: connection class icon;
+				layoutInset: 2;
+				balloonText: (connection target currentQuery
+					ifNil: ['(no query)']
+					ifNotNil: [:q | q nextLabel]);
+				setProperty: #paneOut toValue: connection target;   
+				yourself).
+			self connect: buttons last signal: #clicked: toSelector: #logDataflowChanged.
+			self connect: buttons last signal: #clicked: to: connection selector: #detach.
+			self connect: buttons last signal: #clicked: toSelector: #endInteraction].
 	
 	addBtn := UiToolButton new
 		color: self fanOutColor;
@@ -42,6 +35,16 @@ addFanOutHandles
 	self connect: addBtn eventHandler signal: #mouseMoved: toSelector: #doConnect:with: pattern: {1.#=.addBtn}.
 	self connect: addBtn eventHandler signal: #mouseReleased: toSelector: #addConnection:with:  pattern: {1.#=.addBtn}.
 	
+	outBtn := UiToolButton new
+		color: self fanOutColor;
+		autoRaise: false;
+		buttonStyle: #iconOnly;
+		icon: (ViIcons controlRecordSmallSunkenIcon clippedTo: 10@10);
+		layoutInset: 2;
+		yourself.
+	self connect: outBtn signal: #clicked: to: self target selector: #browseResults.
+	self connect: outBtn signal: #clicked: toSelector: #delete.
+	
 	box := Morph new
 		color: Color transparent;
 		changeTableLayout;
@@ -49,7 +52,7 @@ addFanOutHandles
 		hResizing: #shrinkWrap;
 		vResizing: #shrinkWrap;
 		layoutInset: 3.
-	box addAllMorphs: buttons, {addBtn}.
+	box addAllMorphs: {outBtn}, buttons, {addBtn}.
 
 	box fullBounds.
 	box center: (self basicBox right -15) @ ((self basicBox height // 2) + self basicBox top + (addBtn height // 2)).

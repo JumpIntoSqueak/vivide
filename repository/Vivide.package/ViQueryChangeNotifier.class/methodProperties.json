@@ -1,5 +1,6 @@
 {
 	"class" : {
+		"definitionKind" : "mt 10/7/2014 17:12:19.049",
 		"mapDefinitionKind" : "mt 9/16/2013 16:39:32.915",
 		"resetUniqueInstance" : "mt 9/16/2013 16:07:38.448",
 		"stepKind" : "mt 9/16/2013 16:39:24.105",
@@ -9,8 +10,9 @@
 	"instance" : {
 		"allItemKinds" : "mt 9/16/2013 16:55:41.869",
 		"allQueryEvents" : "mt 9/16/2013 17:01:30.868",
+		"definitionPropertiesChanged:from:to:" : "mt 11/14/2014 11:24:28.674",
 		"definitionRegistered:" : "mt 9/17/2013 08:44:33.798",
-		"definitionSourceCodeChanged:from:to:" : "mt 9/17/2013 09:46:24.968",
+		"definitionSourceCodeChanged:from:to:" : "mt 10/7/2014 17:13:18.261",
 		"definitionUnregistered:" : "mt 9/17/2013 08:44:55.247",
 		"doSilently:" : "mt 9/16/2013 16:11:24.778",
 		"initialize" : "mt 9/16/2013 16:08:03.204",
@@ -34,6 +36,7 @@
 		"stepIconChanged:from:to:" : "mt 9/16/2013 17:16:05.299",
 		"stepNextChanged:from:to:" : "mt 9/16/2013 17:54:01.902",
 		"stepNotEvaluated:becauseOf:" : "mt 6/18/2014 14:18:51.847",
+		"stepPropertiesChanged:from:to:" : "mt 11/14/2014 11:21:58.493",
 		"stepReferenceChanged:from:to:" : "mt 9/16/2013 17:54:33.718",
 		"stepRegistered:" : "mt 9/16/2013 17:11:04.879",
 		"stepRenamed:from:to:" : "mt 9/16/2013 17:15:37.576",

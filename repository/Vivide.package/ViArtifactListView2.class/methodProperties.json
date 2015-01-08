@@ -1,6 +1,6 @@
 {
 	"class" : {
-		 },
+		"defaultViewId" : "mt 10/8/2014 10:29:09.901" },
 	"instance" : {
 		"acceptChanges" : "mt 4/24/2014 08:35:42.244",
 		"addArtifact:" : "mt 4/24/2014 08:35:42.553",
@@ -20,8 +20,8 @@
 		"handleListenEvent:" : "mt 4/24/2014 08:35:44.694",
 		"hasKeyboard" : "mt 4/24/2014 08:35:44.851",
 		"hasUnacceptedChanges" : "mt 4/24/2014 08:35:42.403",
-		"initialize" : "mt 5/13/2014 14:02:43.934",
-		"initializeUi" : "mt 5/6/2014 12:58:57.386",
+		"initialize" : "mt 12/11/2014 10:37:59.499",
+		"initializeUi" : "mt 11/24/2014 14:26:41.049",
 		"initializeUiObjectChanges" : "mt 4/24/2014 08:52:28.087",
 		"initializeUiSystemChanges" : "mt 4/24/2014 08:54:53.456",
 		"messageBounds" : "mt 4/24/2014 08:44:57.07",
@@ -31,14 +31,16 @@
 		"nodesForObjects:" : "mt 8/19/2014 11:27:14.87",
 		"objectSelectionChanged:" : "mt 5/13/2014 09:28:00.24",
 		"objects" : "mt 5/22/2014 14:02:24.493",
-		"objects:" : "mt 4/24/2014 08:35:46.096",
+		"objects:" : "mt 12/18/2014 11:27:00.365",
 		"onClassChange:" : "mt 4/24/2014 08:35:46.257",
 		"onFocusChanged:" : "mt 4/24/2014 08:49:23.462",
 		"onMethodChange:" : "mt 4/24/2014 08:35:46.568",
 		"onObjectChange:" : "mt 4/24/2014 08:35:48.146",
 		"onObjectsChanged" : "mt 5/13/2014 14:24:17.662",
-		"onSelectionChanged:" : "mt 5/7/2014 11:26:53.011",
-		"openArtifact:" : "mt 4/25/2014 08:17:25.838",
+		"onSelectionChanged:" : "mt 10/8/2014 10:30:34.233",
+		"openArtifact:" : "mt 11/14/2014 17:14:22.728",
+		"openArtifacts:" : "mt 11/13/2014 12:00:52.437",
+		"openExplorer:" : "mt 12/11/2014 10:37:34.16",
 		"optimalHeight" : "mt 5/6/2014 11:28:15.798",
 		"optimalWidth" : "mt 4/24/2014 08:35:47.828",
 		"passKeyboardFocusDown" : "mt 4/24/2014 08:35:46.88",
@@ -51,5 +53,4 @@
 		"selectedNodes" : "mt 5/7/2014 11:31:16.021",
 		"updateContextForArtifact:" : "mt 4/25/2014 08:57:39.166",
 		"updateModelInput" : "mt 4/25/2014 09:02:27.234",
-		"updateModelInput:" : "mt 6/7/2014 13:05:20.378",
-		"visibleNodes" : "mt 5/7/2014 11:27:26.583" } }
+		"updateModelInput:" : "mt 12/30/2014 11:03:10.573" } }

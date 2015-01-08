@@ -1,15 +1,17 @@
 actions
 close
+	"See #open."
 
-	self delete.
-	
-	ActiveVivide == self ifTrue: [
-		ActiveVivide := nil].
-	
-	ActiveHand removeKeyboardListener: self.
-	
-	SystemChangeNotifier uniqueInstance noMoreNotificationsFor: self.
-	
 	"No more dropping in the world."
 	self flag: #cleanUp. "mt: What about restoring the old state instead of reset?"
-	ActiveWorld resetTransferMorphConverter.
+	ViActiveVivide world resetTransferMorphConverter.
+
+	SystemChangeNotifier uniqueInstance noMoreNotificationsFor: self.
+	
+	ViActiveVivide world == ActiveWorld
+		ifTrue: [ActiveHand removeKeyboardListener: self].
+
+	ActiveVivide == self
+		ifTrue: [ActiveVivide := nil].
+
+	self delete.

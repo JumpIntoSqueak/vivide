@@ -1,7 +1,7 @@
 actions - open
 openArtifact: anObject
 
-	| editor object |
+	| object |
 	"Reuse windows if modifier pressed."
 	(self currentEvent in: [:evt | evt isKeyboard | evt isMouse and: [evt shiftPressed]])
 		ifTrue: [
@@ -11,7 +11,7 @@ openArtifact: anObject
 	object := anObject.
 		
 	self flag: #evaluate. "mt: Unwrap name bindings."
-	(self currentEvent in: [:evt | evt isDropEvent and: [evt contents shouldCopy]])
+	(self currentEvent in: [:evt | evt isDropEvent and: [evt contents hasFlag: #evaluate]])
 		in: [:evaluateObject | "Unbox bindings, e.g. #a -> aMorph."
 			object := evaluateObject ifTrue: [anObject value] ifFalse: [anObject]].
 
@@ -20,5 +20,16 @@ openArtifact: anObject
 
 	(object isKindOf: ViEditorState) ifTrue: [
 		^ self openEditor: object].
+	
+	(object isKindOf: ViScriptPart) ifTrue: [
+		object allSteps in: [:steps |
+		"See behavior of ViScriptEditor >> #onContextChanged."
+			steps size > 1 ifTrue: [^ self openArtifacts: steps]]].
 
-	^ ViMultiPaneEditor open: #artifacts for: {object}
+	object := (ViQueryInterpreter isCollection: object)
+		ifTrue: [object]
+		ifFalse: [{object}].
+
+	^ VivideLight useClassicMode
+		ifTrue: [self chooseScriptFor: object]
+		ifFalse: [ViSinglePaneEditor open: #artifacts for: object]

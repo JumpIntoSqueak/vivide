@@ -8,35 +8,26 @@ processSteps
 		self assert: self referenceStack isEmpty.
 		^ self].
 
-	interpreter := ViQueryInterpreter new
-		firstStep: self firstStep
-		objects: (Dictionary new
-			at: self defaultGroup put: {self inputForChildren};
-			yourself)
-		groups: {self defaultGroup} asOrderedCollection
-		contexts: (Dictionary new
-			at: self defaultGroup put: (self context
-				ifNil: [ViQueryContext new]
-				ifNotNil: [:ctxt | ctxt copy]);
-			yourself)
-		stack: self referenceStack copy.
+	interpreter := ViQueryInterpreter onNode: self.
 
-	interpreter upToNextProperties.
+	(Smalltalk at: #thisPane) in: [:oldThisPane |
+		(Smalltalk at: #thisView) in: [:oldThisView |
+			[
+				Smalltalk at: #thisPane put: self pane.
+				Smalltalk at: #thisView put: (self pane ifNotNil: [:p | p view]).
+				interpreter upToNextProperties.
+			] ensure: [
+				Smalltalk at: #thisView put: oldThisView.
+				Smalltalk at: #thisPane put: oldThisPane]]].
 	
 	"Prepare model."
 	groups := interpreter groups.
 	children := Dictionary new.
 	groups do: [:group | children at: group put: OrderedCollection new].
 	
-	self flag: #remove. "mt: Maybe we want to keep empty groups?"
-	interpreter hasObjects ifFalse: [^ self "no children"].
-
 	"Create child nodes."
-	groups do: [:group | children at: group put: (
-		(interpreter objectsFor: group) collect: [:object |
-			(ViQueryNode newFrom: (interpreter propertiesFor: object))
-				inputForChildren: object;
-				firstStep: interpreter currentStep;
-				context: (interpreter contextFor: group);
-				referenceStack: interpreter stack;
-				yourself])].
+	groups do: [:group | children
+		at: group
+		put: ((interpreter createNodesForGroup: group)
+			do: [:node | node pane: self pane];
+			yourself)].

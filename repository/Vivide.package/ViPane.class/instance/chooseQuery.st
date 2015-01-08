@@ -4,9 +4,11 @@ chooseQuery
 	| pane |
 	pane := ViPane new
 		objects: self appropriateQueries;
-		currentQuery: (ViQueryStep convert: #formattedQueries);
+		currentQuery: #formattedQueries asScript;
 		yourself.
 	pane
 		chooseObjectAt: ActiveHand cursorPoint - (10@10)
 		thenNotify: self
-		with: #currentQuery:. 
+		with: #currentQueryOrReopen:.
+
+	ViLoggingService trigger: {#message -> 'Script list opened.'}.

@@ -7,6 +7,3 @@ updateResults
 	self setProperty: #isUpdating toValue: true. 
 	self model updateChildren.
 	self removeProperty: #isUpdating. 
-	
-	self listenersForSelections do: [:msg |
-		msg valueWithArguments: {self selectedResults.self}].

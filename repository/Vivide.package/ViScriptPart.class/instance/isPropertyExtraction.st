@@ -1,0 +1,4 @@
+testing
+isPropertyExtraction
+
+	^ self isProperty

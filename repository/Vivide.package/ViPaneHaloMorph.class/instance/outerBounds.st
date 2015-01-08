@@ -1,4 +1,4 @@
-as yet unclassified
+geometry
 outerBounds
 
 	| box |
@@ -7,10 +7,8 @@ outerBounds
 	newOutputPane ifNotNil: [:m |
 		box := box quickMerge: m bounds].
 	
-	
-	self listeningPanesForSelections,
-	self listeningPanesForResults,
-	self listenToPanesForSelections,
-	self listenToPanesForResults do: [:m |
+	((self target connections
+		gather: [:c | {c source. c target}])
+		reject: [:o | o isNil]) asSet do: [:m |
 		box := box quickMerge: m bounds].
 	^ box

@@ -1,4 +1,6 @@
 accessing
 supportedTypes
 
-	^ ViQueryStep allSubclasses copyWithoutAll: ViQueryFillStep withAllSubclasses
+	VivideLight useClassicMode ifTrue: [^ {}].
+
+	^ ViQueryStep allSubclasses copyWithoutAll: ViQueryFillStep withAllSubclasses, {ViScriptPart}

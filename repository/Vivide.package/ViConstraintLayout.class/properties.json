@@ -1,12 +1,15 @@
 {
-	"category" : "Vivide-Sandbox",
+	"category" : "Vivide-Support-Morphic",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"isLayouting",
+		"activeMorph",
+		"cachedBounds",
+		"cellInset" ],
 	"name" : "ViConstraintLayout",
 	"pools" : [
 		 ],

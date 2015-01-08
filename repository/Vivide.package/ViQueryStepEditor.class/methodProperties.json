@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"supportedTypes" : "mt 2/6/2014 15:35:12.449" },
+		"supportedTypes" : "mt 12/9/2014 15:50:08.527" },
 	"instance" : {
 		"acceptChanges" : "mt 9/9/2013 14:24:16.997",
 		"acceptDefinition" : "mt 2/5/2014 14:35:51.725",
@@ -38,7 +38,7 @@
 		"currentView:" : "mt 9/18/2013 20:07:40.955",
 		"deleteStep" : "mt 11/16/2013 13:13:06.893",
 		"exploreAllProperties" : "mt 11/16/2013 13:34:27.704",
-		"exploreContexts" : "mt 11/16/2013 13:45:16.706",
+		"exploreContexts" : "mt 11/15/2014 16:00:50.116",
 		"exploreOneProperty" : "mt 11/16/2013 14:50:55.15",
 		"exploreOutput" : "mt 11/16/2013 13:22:17.408",
 		"exploreOutputWithoutGroups" : "mt 11/16/2013 13:31:45.086",
@@ -73,8 +73,8 @@
 		"typeMappings" : "mt 9/15/2013 11:10:01.925",
 		"ui" : "mt 9/2/2013 14:38:00.091",
 		"unregisterQuery" : "mt 9/3/2013 13:16:08.328",
-		"updateFromEvent:" : "mt 9/17/2013 08:42:27.334",
+		"updateFromEvent:" : "mt 12/10/2014 10:29:20.33",
 		"updateSummaryLbl" : "mt 9/9/2013 09:52:46.576",
 		"updateTypeFromEditor" : "mt 1/8/2014 08:57:21.732",
-		"updateViewList" : "mt 9/18/2013 20:09:28.088",
+		"updateViewList" : "mt 1/5/2015 15:17:53.306",
 		"useNewCode" : "mt 9/9/2013 12:04:36.792" } }

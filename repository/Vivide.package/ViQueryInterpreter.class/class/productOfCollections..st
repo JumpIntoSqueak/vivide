@@ -1,6 +1,7 @@
-as yet unclassified
+collection handling
 productOfCollections: someCollections
-
+	"Cartesian product?"
+	
 	| tmp |
 	someCollections ifEmpty: [^ #()].
 	
@@ -8,7 +9,7 @@ productOfCollections: someCollections
 	
 	tmp := someCollections withIndexCollect: [:o :i |
 		(ViQueryInterpreter isCollection: o)
-			ifTrue: [o ifEmpty: [#(nil)] ifNotEmpty: [o]]
+			ifTrue: [o ifEmpty: [^ #()] ifNotEmpty: [o]]
 			ifFalse: [{o}]].
 
 	"Algorithm thanks to Michael Grünewald, 09-06-2014"

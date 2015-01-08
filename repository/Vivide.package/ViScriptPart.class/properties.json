@@ -1,0 +1,15 @@
+{
+	"category" : "Vivide-Queries",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"isProperty",
+		"isExecutedAsynchronously" ],
+	"name" : "ViScriptPart",
+	"pools" : [
+		 ],
+	"super" : "ViQueryStep",
+	"type" : "normal" }
