@@ -1,4 +1,4 @@
-#The VIVIDE Programming Environment
+#The VIVIDE Programming Environment [![Try Now](http://img.shields.io/badge/try-now-green.svg)](http://hpi.de/swa/jumpinto/JumpIntoSqueak/vivide)
 
 A programming environment and framework that supports *data-driven*, *scriptable* construction of graphical tools with low effort. It is implemented in Squeak/Smalltalk.
 
